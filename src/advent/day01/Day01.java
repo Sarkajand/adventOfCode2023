@@ -2,7 +2,6 @@ package advent.day01;
 
 import advent.InputReader;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -10,7 +9,7 @@ import java.util.regex.Pattern;
 
 public class Day01 {
 
-    public void firstPart(String filePath) throws IOException {
+    public void firstPart(String filePath) {
         List<String> input = InputReader.readInput(filePath);
         List<Integer> numbers = new ArrayList<>();
         input.forEach(line -> {
@@ -29,7 +28,7 @@ public class Day01 {
         System.out.println(numbers.stream().mapToInt(e -> e).sum());
     }
 
-    public void secondPart(String filePath) throws IOException {
+    public void secondPart(String filePath) {
         List<String> input = InputReader.readInput(filePath);
         List<Integer> numbers = new ArrayList<>();
         Pattern p = Pattern.compile("(?=([0-9]|zero|one|two|three|four|five|six|seven|eight|nine)).");

@@ -1,15 +1,23 @@
 import advent.day01.Day01;
 import advent.day02.Day02;
-
-import java.io.IOException;
+import advent.day03.Day03;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 //        day01();
-        day02();
+//        day02();
+        day03();
     }
 
-    private static void day02() throws IOException {
+    private static void day03() {
+        Day03 day03 = new Day03();
+        day03.firstPart("day03test.txt");
+        day03.firstPart("day03input.txt");
+        day03.secondPart("day03test.txt");
+        day03.secondPart("day03input.txt");
+    }
+
+    private static void day02() {
         Day02 day02 = new Day02();
         day02.firstPart("day02test.txt");
         day02.firstPart("day02input.txt");
@@ -17,7 +25,7 @@ public class Main {
         day02.secondPart("day02input.txt");
     }
 
-    private static void day01() throws IOException {
+    private static void day01() {
         Day01 day01 = new Day01();
         day01.firstPart("day01test.txt");
         day01.firstPart("day01input.txt");

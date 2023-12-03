@@ -2,7 +2,6 @@ package advent.day02;
 
 import advent.InputReader;
 
-import java.io.IOException;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -10,7 +9,7 @@ import java.util.regex.Pattern;
 
 public class Day02 {
 
-    public void firstPart(String filePath) throws IOException {
+    public void firstPart(String filePath) {
         List<String> input = InputReader.readInput(filePath);
         int gameNumber = 1;
         int gameNumberSum = 0;
@@ -47,7 +46,7 @@ public class Day02 {
         System.out.println(gameNumberSum);
     }
 
-    public void secondPart(String filePath) throws IOException {
+    public void secondPart(String filePath) {
         List<String> input = InputReader.readInput(filePath);
         Pattern redPattern = Pattern.compile("([0-9]+ red)");
         Pattern greenPattern = Pattern.compile("([0-9]+ green)");
