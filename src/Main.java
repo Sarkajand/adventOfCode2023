@@ -1,12 +1,22 @@
 import advent.day01.Day01;
 import advent.day02.Day02;
 import advent.day03.Day03;
+import advent.day04.Day04;
 
 public class Main {
     public static void main(String[] args) {
 //        day01();
 //        day02();
-        day03();
+//        day03();
+        day04();
+    }
+
+    private static void day04() {
+        Day04 day04 = new Day04();
+        day04.firstPart("day04test.txt");
+        day04.firstPart("day04input.txt");
+        day04.secondPart("day04test.txt");
+        day04.secondPart("day04input.txt");
     }
 
     private static void day03() {
