@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class InputReader {
@@ -56,5 +57,32 @@ public class InputReader {
         }
 
         return map;
+    }
+    public static char[][] padInput(char[][] map, char c) {
+        char[][] paddedMap = new char[map.length + 2][map[0].length + 2];
+        char[] firstRow = new char[map[0].length + 2];
+        Arrays.fill(firstRow, c);
+        paddedMap[0] = firstRow;
+        char[] lastRow = new char[map[0].length + 2];
+        Arrays.fill(lastRow, c);
+        paddedMap[map.length + 1] = lastRow;
+
+
+        for (int i = 1; i < map.length + 1; i++) {
+            char[] newRow = new char[map[0].length + 2];
+            Arrays.fill(newRow, c);
+            char[] row = map[i - 1];
+            System.arraycopy(row, 0, newRow, 1, map[0].length);
+            paddedMap[i] = newRow;
+        }
+
+        return paddedMap;
+    }
+
+    public static void printMap(char[][] map) {
+        for (char[] row : map) {
+            System.out.println(row);
+        }
+        System.out.println();
     }
 }
