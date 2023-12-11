@@ -8,6 +8,7 @@ import advent.day07.Day07;
 import advent.day08.Day08;
 import advent.day09.Day09;
 import advent.day10.Day10;
+import advent.day11.Day11;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,7 +21,18 @@ public class Main {
 //        day07();
 //        day08();
 //        day09();
-        day10();
+//        day10();
+        day11();
+    }
+
+    private static void day11() {
+        Day11 day11 = new Day11();
+        day11.firstPart("day11test.txt");
+        day11.firstPart("day11input.txt");
+        day11.secondPart("day11test.txt", 2);
+        day11.secondPart("day11test.txt", 10);
+        day11.secondPart("day11test.txt", 100);
+        day11.secondPart("day11input.txt", 1000000);
     }
 
     private static void day10() {
