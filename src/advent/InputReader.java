@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class InputReader {
 
@@ -58,6 +59,39 @@ public class InputReader {
 
         return map;
     }
+
+    public static int[][] readInput3(String filePath) {
+        String file = "src/resources/" + filePath;
+        int mapRows = 0;
+        int mapColumns = 0;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String currentLine = reader.readLine();
+            while (currentLine != null && !currentLine.isEmpty()) {
+                mapRows++;
+                mapColumns = Math.max(currentLine.length(), mapColumns);
+                currentLine = reader.readLine();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        int[][] map = new int[mapRows][mapColumns];
+        int i = 0;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String currentLine = reader.readLine();
+            while (currentLine != null && !currentLine.isEmpty()) {
+                map[i] = currentLine.chars().map(Character::getNumericValue).toArray();
+                i++;
+                currentLine = reader.readLine();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return map;
+    }
     public static char[][] padInput(char[][] map, char c) {
         char[][] paddedMap = new char[map.length + 2][map[0].length + 2];
         char[] firstRow = new char[map[0].length + 2];
@@ -82,6 +116,13 @@ public class InputReader {
     public static void printMap(char[][] map) {
         for (char[] row : map) {
             System.out.println(row);
+        }
+        System.out.println();
+    }
+
+    public static void printMap2(int[][] map, String str) {
+        for (int[] row : map) {
+            System.out.println(Arrays.stream(row).mapToObj(Integer::toString).collect(Collectors.joining(str)));
         }
         System.out.println();
     }
