@@ -19,6 +19,7 @@ import advent.day18.Day18;
 import advent.day19.Day19;
 import advent.day20.Day20;
 import advent.day21.Day21;
+import advent.day22.Day22;
 
 public class Main {
     public static void main(String[] args) {
@@ -42,7 +43,17 @@ public class Main {
 //        day18();
 //        day19();
 //        day20();
-        day21();
+//        day21();
+        day22();
+    }
+
+    private static void day22() {
+        Day22 day22 = new Day22();
+        day22.firstPart("day22test.txt");
+        day22.firstPart("day22input.txt");
+        day22.secondPart("day22test.txt");
+        day22.secondPart("day22input.txt");
+
     }
 
     private static void day21() {
